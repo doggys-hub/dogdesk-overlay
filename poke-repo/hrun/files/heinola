@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ "$1" = "run" ]; then
+    shift
+    exec "$@"
+fi
+
+echo "Heinola Runtime 0.1"
+echo
+echo "Usage:"
+echo "  heinola run <application> [args]"
