@@ -3,81 +3,89 @@
 <html lang="fi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DoGDeskOS Repository</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DoGDeskOS - Repository Portal</title>
 
 <style>
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #eef2f5;
+body{
+    margin:0;
+    font-family:Segoe UI, Arial, sans-serif;
+    background:#f2f4f7;
 }
 
-.header {
-    background: #1f5ea8;
-    color: white;
-    padding: 16px;
-    font-size: 26px;
-    font-weight: bold;
+.topbar{
+    background:#0066b3;
+    color:white;
+    padding:16px;
+    font-size:28px;
+    font-weight:bold;
 }
 
-.subheader {
-    background: #2d6fbe;
-    color: white;
-    padding: 8px 16px;
-    font-size: 14px;
+.container{
+    max-width:1200px;
+    margin:20px auto;
+    display:flex;
+    gap:20px;
 }
 
-.sidebar {
-    position: fixed;
-    top: 87px;
-    left: 0;
-    width: 220px;
-    bottom: 0;
-    background: white;
-    border-right: 1px solid #d8d8d8;
+.login{
+    width:280px;
+    background:white;
+    border-radius:6px;
+    box-shadow:0 1px 4px rgba(0,0,0,.15);
+    padding:20px;
 }
 
-.sidebar a {
-    display: block;
-    padding: 12px 16px;
-    text-decoration: none;
-    color: #1f5ea8;
-    border-bottom: 1px solid #ececec;
+.main{
+    flex:1;
 }
 
-.sidebar a:hover {
-    background: #eef5ff;
+.card{
+    background:white;
+    border-radius:6px;
+    box-shadow:0 1px 4px rgba(0,0,0,.15);
+    padding:20px;
+    margin-bottom:20px;
 }
 
-.content {
-    margin-left: 240px;
-    padding: 20px;
+h2{
+    margin-top:0;
+    color:#0066b3;
 }
 
-.card {
-    background: white;
-    border: 1px solid #d8d8d8;
-    border-radius: 4px;
-    padding: 16px;
-    margin-bottom: 16px;
+input{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    margin-bottom:12px;
+    box-sizing:border-box;
 }
 
-.card h2 {
-    margin-top: 0;
-    color: #1f5ea8;
+button{
+    width:100%;
+    padding:10px;
+    background:#0066b3;
+    color:white;
+    border:none;
+    cursor:pointer;
 }
 
-.status {
-    color: green;
-    font-weight: bold;
+.package{
+    padding:10px;
+    border-bottom:1px solid #ddd;
 }
 
-pre {
-    background: #f7f7f7;
-    padding: 10px;
-    border: 1px solid #ddd;
-    overflow-x: auto;
+.package:last-child{
+    border-bottom:none;
+}
+
+.status{
+    color:green;
+    font-weight:bold;
+}
+
+a{
+    color:#0066b3;
 }
 </style>
 
@@ -85,56 +93,71 @@ pre {
 
 <body>
 
-<div class="header">
-DoGDeskOS Repository
+<div class="topbar">
+DoGDeskOS Repository Portal
 </div>
 
-<div class="subheader">
-Official package repository and package information portal
+<div class="container">
+
+<div class="login">
+<h2>Repository Access</h2>
+
+<label>Repository</label> <input value="dogdeskos" readonly>
+
+<label>Status</label> <input value="Online" readonly>
+
+<button onclick="window.location.href='https://github.com/doggys-hub/dogdesk-overlay'">
+Open Repository
+</button>
+
 </div>
 
-<div class="sidebar">
-    <a href="#">Home</a>
-    <a href="#">Packages</a>
-    <a href="#">Documentation</a>
-    <a href="#">Downloads</a>
-    <a href="#">GitHub</a>
-</div>
-
-<div class="content">
-
-```
-<div class="card">
-    <h2>Repository Status</h2>
-    <p class="status">● Online</p>
-    <p>Dogdeskos overlay is operational.</p>
-</div>
+<div class="main">
 
 <div class="card">
-    <h2>Official Packages</h2>
-    <ul>
-        <li>poke-mini</li>
-        <li>kanto-libs</li>
-        <li>hrun</li>
-        <li>hedit95</li>
-    </ul>
+<h2>Announcements</h2>
+
+<p class="status">● Repository operational</p>
+
+<p>
+Welcome to the official DoGDeskOS package repository.
+</p>
 </div>
 
 <div class="card">
-    <h2>Repository Installation</h2>
-```
+<h2>Official Packages</h2>
+
+<div class="package">
+<b>poke-mini</b><br>
+Minimal Poke Package Manager
+</div>
+
+<div class="package">
+<b>kanto-libs</b><br>
+Repository compatibility layer
+</div>
+
+<div class="package">
+<b>hrun</b><br>
+Heinola Runtime launcher
+</div>
+
+<div class="package">
+<b>hedit95</b><br>
+Heinola Edit 95 text editor
+</div>
+
+</div>
+
+<div class="card">
+<h2>Installation</h2>
 
 <pre>eselect repository add dogdeskos git https://github.com/doggys-hub/dogdesk-overlay.git
 emaint sync -r dogdeskos</pre>
 
-```
 </div>
 
-<div class="card">
-    <h2>Latest News</h2>
-    <p>Welcome to the official DoGDeskOS package repository.</p>
 </div>
-```
 
 </div>
 
