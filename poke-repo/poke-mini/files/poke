@@ -1,0 +1,28 @@
+#!/bin/bash
+
+REPO="https://raw.githubusercontent.com/doggys-hub/dogdesk-overlay/main"
+
+case "$1" in
+    -i)
+        PKG="$2"
+
+        if [ -z "$PKG" ]; then
+            echo "Usage: poke -i <package>"
+            exit 1
+        fi
+
+        echo "[poke] Installing $PKG"
+
+        mkdir -p /tmp/poke/$PKG
+
+        curl -L "$REPO/poke-repo/$PKG/files/install.sh" \
+            -o "/tmp/poke/$PKG/install.sh" || exit 1
+
+        chmod +x "/tmp/poke/$PKG/install.sh"
+        "/tmp/poke/$PKG/install.sh"
+        ;;
+
+    *)
+        echo "poke -i <package>"
+        ;;
+esac
