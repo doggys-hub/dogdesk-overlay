@@ -1,6 +1,104 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DoGDeskOS Repository</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f6f8;
+}
+
+.header{
+    background:#1f5ea8;
+    color:white;
+    padding:15px;
+    font-size:24px;
+}
+
+.sidebar{
+    width:220px;
+    background:white;
+    float:left;
+    min-height:100vh;
+    border-right:1px solid #d0d0d0;
+}
+
+.sidebar a{
+    display:block;
+    padding:12px;
+    color:#1f5ea8;
+    text-decoration:none;
+}
+
+.sidebar a:hover{
+    background:#eef4fb;
+}
+
+.content{
+    margin-left:220px;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    padding:15px;
+    border:1px solid #d8d8d8;
+    margin-bottom:15px;
+}
+
+.status{
+    color:green;
+    font-weight:bold;
+}
+</style>
+
+</head>
+
 <body>
-<h1>DoGDeskOS toimii!</h1>
+
+<div class="header">
+DoGDeskOS Repository
+</div>
+
+<div class="sidebar">
+    <a href="#">Etusivu</a>
+    <a href="#">Paketit</a>
+    <a href="#">Dokumentaatio</a>
+    <a href="#">Lataukset</a>
+</div>
+
+<div class="content">
+
+<div class="card">
+<h2>Repository Status</h2>
+<p class="status">● Online</p>
+<p>DoGDeskOS toimii!</p>
+</div>
+
+<div class="card">
+<h2>Viralliset paketit</h2>
+<ul>
+<li>poke-mini</li>
+<li>kanto-libs</li>
+<li>hrun</li>
+<li>hedit95</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>Asennus</h2>
+<pre>
+eselect repository add dogdeskos git https://github.com/doggys-hub/dogdesk-overlay.git
+emaint sync -r dogdeskos
+</pre>
+</div>
+
+</div>
+
 </body>
 </html>
