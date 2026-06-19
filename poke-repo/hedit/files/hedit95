@@ -1,0 +1,54 @@
+#!/bin/bash
+
+FILE="$1"
+
+if [ -z "$FILE" ]; then
+    echo "Heinola Edit 95"
+    echo
+    echo "Usage:"
+    echo "  hedit95 <file>"
+    exit 1
+fi
+
+if [ ! -f "$FILE" ]; then
+    touch "$FILE"
+fi
+
+while true; do
+    clear
+
+    echo "========================================"
+    echo "        Heinola Edit 95"
+    echo "========================================"
+    echo "File: $FILE"
+    echo
+    cat "$FILE"
+    echo
+    echo "----------------------------------------"
+    echo "1) Add line"
+    echo "2) View file"
+    echo "3) Save and exit"
+    echo "4) Exit without changes"
+    echo
+    read -p "Choice: " CHOICE
+
+    case "$CHOICE" in
+        1)
+            read -p "Text: " TEXT
+            echo "$TEXT" >> "$FILE"
+            ;;
+        2)
+            echo
+            cat "$FILE"
+            echo
+            read -p "Press Enter..."
+            ;;
+        3)
+            echo "Saved."
+            exit 0
+            ;;
+        4)
+            exit 0
+            ;;
+    esac
+done
