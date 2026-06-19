@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DoGDeskOS Repository</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #eef2f5;
+}
+
+.header {
+    background: #1f5ea8;
+    color: white;
+    padding: 16px;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.subheader {
+    background: #2d6fbe;
+    color: white;
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+.sidebar {
+    position: fixed;
+    top: 87px;
+    left: 0;
+    width: 220px;
+    bottom: 0;
+    background: white;
+    border-right: 1px solid #d8d8d8;
+}
+
+.sidebar a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #1f5ea8;
+    border-bottom: 1px solid #ececec;
+}
+
+.sidebar a:hover {
+    background: #eef5ff;
+}
+
+.content {
+    margin-left: 240px;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    border: 1px solid #d8d8d8;
+    border-radius: 4px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.card h2 {
+    margin-top: 0;
+    color: #1f5ea8;
+}
+
+.status {
+    color: green;
+    font-weight: bold;
+}
+
+pre {
+    background: #f7f7f7;
+    padding: 10px;
+    border: 1px solid #ddd;
+    overflow-x: auto;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+DoGDeskOS Repository
+</div>
+
+<div class="subheader">
+Official package repository and package information portal
+</div>
+
+<div class="sidebar">
+    <a href="#">Home</a>
+    <a href="#">Packages</a>
+    <a href="#">Documentation</a>
+    <a href="#">Downloads</a>
+    <a href="#">GitHub</a>
+</div>
+
+<div class="content">
+
+```
+<div class="card">
+    <h2>Repository Status</h2>
+    <p class="status">● Online</p>
+    <p>Dogdeskos overlay is operational.</p>
+</div>
+
+<div class="card">
+    <h2>Official Packages</h2>
+    <ul>
+        <li>poke-mini</li>
+        <li>kanto-libs</li>
+        <li>hrun</li>
+        <li>hedit95</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2>Repository Installation</h2>
+```
+
+<pre>eselect repository add dogdeskos git https://github.com/doggys-hub/dogdesk-overlay.git
+emaint sync -r dogdeskos</pre>
+
+```
+</div>
+
+<div class="card">
+    <h2>Latest News</h2>
+    <p>Welcome to the official DoGDeskOS package repository.</p>
+</div>
+```
+
+</div>
+
+</body>
+</html>
