@@ -1,11 +1,10 @@
-EAPI=8
-
 DESCRIPTION="Minimal Poke Package Manager"
-HOMEPAGE="https://github.com/doggys-hub/dogdesk-overlay"
+VERSION="0.1"
 LICENSE="MIT"
-SLOT="0"
-KEYWORDS="~amd64"
+MAINTAINER="doggys-hub"
 
-src_install() {
-    newbin "${FILESDIR}/poke" poke
-}
+SRC="poke"
+
+INSTALL="/usr/bin/poke"
+
+DEPEND=""
